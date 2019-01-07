@@ -1886,8 +1886,9 @@ X509_cmp_time_internal(const ASN1_TIME *ctm, time_t *cmp_time, int clamp_notafte
 		goto out; /* invalid time */
 
 	/* RFC 5280 section 4.1.2.5 */
-	if (tm1.tm_year < 150 && type != V_ASN1_UTCTIME)
-		goto out;
+	//Allow dates before 2050 to be GENERALIZEDTIME
+	//This is not a security feature and allow compatibility
+	//with OpenSSL
 	if (tm1.tm_year >= 150 && type != V_ASN1_GENERALIZEDTIME)
 		goto out;
 

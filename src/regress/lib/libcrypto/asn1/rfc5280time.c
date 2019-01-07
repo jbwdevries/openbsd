@@ -79,36 +79,6 @@ struct rfc5280_time_test rfc5280_invtime_tests[] = {
 	{
 		.str = "aaaaaaaaaaaaaaZ",
 	},
-	{
-		/* Must be a UTC time per RFC 5280 */
-		.str = "19700101000000Z",
-		.data = "19700101000000Z",
-		.time = 0,
-	},
-	{
-		/* (times before 2050 must be UTCTIME) Per RFC 5280 4.1.2.5 */
-		.str = "20150923032700Z",
-		.data = "20150923032700Z",
-		.time = 1442978820,
-	},
-	{
-		/* (times before 2050 must be UTCTIME) Per RFC 5280 4.1.2.5 */
-		.str = "00000101000000Z",
-		.data = "00000101000000Z",
-		.time = -62167219200LL,
-	},
-	{
-		/* (times before 2050 must be UTCTIME) Per RFC 5280 4.1.2.5 */
-		.str = "20491231235959Z",
-		.data = "20491231235959Z",
-		.time = 2524607999LL,
-	},
-	{
-		/* (times before 2050 must be UTCTIME) Per RFC 5280 4.1.2.5 */
-		.str = "19500101000000Z",
-		.data = "19500101000000Z",
-		.time = -631152000LL,
-	},
 };
 
 struct rfc5280_time_test rfc5280_gentime_tests[] = {
